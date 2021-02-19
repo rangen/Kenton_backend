@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     namespace:v1 do
       resources :questions
         resources :answers
+      get 'new_questions', to: 'questions#get_new'
     end
   end
 end

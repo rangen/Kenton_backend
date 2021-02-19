@@ -6,7 +6,7 @@ Question.destroy_all
 
 rm_array.each do |question|
  Question.create(
- correct_anwser: question["correct_answer"],
+ correct_answer: question["correct_answer"],
  incorrect_answer: question["incorrect_answers"],
  question: question["question"],
  )

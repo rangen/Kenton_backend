@@ -10,7 +10,12 @@ class Api::V1::QuestionsController < ApplicationController
       @question = Question.find(params[:id])
       render json: @question, status: :ok
   end
-
+  
+  def get_new
+    Question.get_new
+    index
+  end
+  
   def create
     @question = Question.new(question_params)
     if @question.save
@@ -30,6 +35,7 @@ class Api::V1::QuestionsController < ApplicationController
     puts response
     JSON.parse(response.body)
   end
+
 
 
   private
